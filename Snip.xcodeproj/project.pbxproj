@@ -26,6 +26,7 @@
 		B30E2DC7205F9915008CD6A4 /* AutoHeightTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = B30E2DC6205F9915008CD6A4 /* AutoHeightTextView.m */; };
 		B3816566205FB0D000659960 /* ScreenCapture_toolbar_mosaic_ineffect.tiff in Resources */ = {isa = PBXBuildFile; fileRef = B3816564205FB0D000659960 /* ScreenCapture_toolbar_mosaic_ineffect.tiff */; };
 		B3816567205FB0D000659960 /* ScreenCapture_toolbar_mosaic_effect.tiff in Resources */ = {isa = PBXBuildFile; fileRef = B3816565205FB0D000659960 /* ScreenCapture_toolbar_mosaic_effect.tiff */; };
+		C28FE384261D9680008C0310 /* CaptureUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C28FE383261D9680008C0310 /* CaptureUtil.m */; };
 		D265E3851A820CFB00E301D9 /* ScreenCapture_toolbar_cross_normal.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D265E3811A820CFB00E301D9 /* ScreenCapture_toolbar_cross_normal.tiff */; };
 		D265E3861A820CFB00E301D9 /* ScreenCapture_toolbar_rect_effect.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D265E3821A820CFB00E301D9 /* ScreenCapture_toolbar_rect_effect.tiff */; };
 		D265E3871A820CFB00E301D9 /* ScreenCapture_toolbar_rect_ineffect.tiff in Resources */ = {isa = PBXBuildFile; fileRef = D265E3831A820CFB00E301D9 /* ScreenCapture_toolbar_rect_ineffect.tiff */; };
@@ -85,6 +86,8 @@
 		B30E2DC6205F9915008CD6A4 /* AutoHeightTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoHeightTextView.m; sourceTree = "<group>"; };
 		B3816564205FB0D000659960 /* ScreenCapture_toolbar_mosaic_ineffect.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ScreenCapture_toolbar_mosaic_ineffect.tiff; sourceTree = "<group>"; };
 		B3816565205FB0D000659960 /* ScreenCapture_toolbar_mosaic_effect.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ScreenCapture_toolbar_mosaic_effect.tiff; sourceTree = "<group>"; };
+		C28FE382261D9680008C0310 /* CaptureUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptureUtil.h; sourceTree = "<group>"; };
+		C28FE383261D9680008C0310 /* CaptureUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaptureUtil.m; sourceTree = "<group>"; };
 		D265E3811A820CFB00E301D9 /* ScreenCapture_toolbar_cross_normal.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ScreenCapture_toolbar_cross_normal.tiff; sourceTree = "<group>"; };
 		D265E3821A820CFB00E301D9 /* ScreenCapture_toolbar_rect_effect.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ScreenCapture_toolbar_rect_effect.tiff; sourceTree = "<group>"; };
 		D265E3831A820CFB00E301D9 /* ScreenCapture_toolbar_rect_ineffect.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ScreenCapture_toolbar_rect_ineffect.tiff; sourceTree = "<group>"; };
@@ -191,6 +194,8 @@
 				32E071C21A7C6A5A0094D5DE /* Supporting Files */,
 				326AA0B51A7D116E00507232 /* DemoViewController.h */,
 				326AA0B61A7D116E00507232 /* DemoViewController.m */,
+				C28FE382261D9680008C0310 /* CaptureUtil.h */,
+				C28FE383261D9680008C0310 /* CaptureUtil.m */,
 			);
 			path = Snip;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -367,6 +373,7 @@
 				326AA0C11A7D1B4F00507232 /* SnipWindowController.m in Sources */,
 				326AA0BA1A7D11E800507232 /* SnipManager.m in Sources */,
 				32E071C81A7C6A5A0094D5DE /* main.m in Sources */,
+				C28FE384261D9680008C0310 /* CaptureUtil.m in Sources */,
 				326AA0CB1A7D2C6000507232 /* SnipUtil.m in Sources */,
 				D29A356E1A836F8000DD41BC /* DrawPathView.m in Sources */,
 				326AA0C81A7D296800507232 /* SnipView.m in Sources */,
