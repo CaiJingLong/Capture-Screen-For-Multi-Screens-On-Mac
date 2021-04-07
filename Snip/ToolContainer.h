@@ -8,17 +8,18 @@
 
 #import <Cocoa/Cocoa.h>
 
-typedef NS_ENUM(NSInteger, ActionType)
-{
-    ActionCancel,
-    ActionOK,
-    ActionShapeRect,
-    ActionShapeEllipse,
-    ActionShapeArrow,
-    ActionEditPen,
-    ActionEditText
+typedef NS_ENUM(NSInteger, ActionType) {
+  ActionCancel,
+  ActionOK,
+  ActionShapeRect,
+  ActionShapeEllipse,
+  ActionShapeArrow,
+  ActionEditPen,
+  ActionEditPickColor,
+  ActionEditText
 };
 
 @interface ToolContainer : NSView
 @property(nonatomic, copy) void (^toolClick)(long index);
+@property(nonatomic, assign) int toolCount;
 @end

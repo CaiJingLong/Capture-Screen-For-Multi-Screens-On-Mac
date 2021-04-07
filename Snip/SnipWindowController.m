@@ -11,6 +11,7 @@
 #import "SnipUtil.h"
 #import "SnipView.h"
 #import "AutoHeightTextView.h"
+#import "SingleContainer.h"
 
 const int kAdjustKnown = 8;
 
@@ -243,10 +244,13 @@ const int kAdjustKnown = 8;
                 break;
             case ActionCancel:
                 [[SnipManager sharedInstance] endCapture:nil];
-                break;
+              break;
             case ActionOK:
                 [strongSelf onOK];
-                break;
+              break;
+            case ActionEditPickColor:
+                [[SingleContainer shared] pickColor];
+            break;
             default:
                 break;
         }
@@ -333,17 +337,18 @@ const int kAdjustKnown = 8;
                     self.editTextView = [[AutoHeightTextView alloc] initWithFrame:NSMakeRect(0, 0, 0, 0)];
                     self.editTextView.backgroundColor = [NSColor clearColor];
                     self.editTextView.wantsLayer = YES;
-                    self.editTextView.layer.borderColor = [NSColor redColor].CGColor;
+                    NSColor *color = SingleContainer.shared.color;
+                    self.editTextView.layer.borderColor = color.CGColor;
                     self.editTextView.layer.borderWidth = 0.5;
                     self.editTextView.font = [NSFont systemFontOfSize:14];
-                    self.editTextView.textColor = [NSColor redColor];
-                    self.editTextView.insertionPointColor = [NSColor redColor];
+                    self.editTextView.textColor = color;
+                    self.editTextView.insertionPointColor = color;
                     self.editTextView.textContainerInset = CGSizeMake(0, 0);
 
                     [self.snipView addSubview:self.editTextView];
-                    self.editTextView.frame = CGRectMake(mouseLocation.x, mouseLocation.y-12, 120, 24);
-                    self.rectBeginPoint = CGPointMake(mouseLocation.x, mouseLocation.y-12 + 24);
-                    [self.editTextView setSelectedRange:NSMakeRange(0,0)];
+                    self.editTextView.frame = CGRectMake(mouseLocation.x, mouseLocation.y - 12, 120, 24);
+                    self.rectBeginPoint = CGPointMake(mouseLocation.x, mouseLocation.y - 12 + 24);
+                    [self.editTextView setSelectedRange:NSMakeRange(0, 0)];
                     [self.window makeFirstResponder:self.editTextView];
                 }
             }

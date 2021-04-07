@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "SnipManager.h"
 #import "CaptureUtil.h"
+#import "SingleContainer.h"
 
 @interface AppDelegate ()
 
@@ -32,11 +33,16 @@
   item.menu = menu;
 
   NSMenuItem *item1 = [[NSMenuItem alloc] initWithTitle:@"capture" action:@selector(capture) keyEquivalent:@"P"];
-
   NSMenuItem *item2 = [[NSMenuItem alloc] initWithTitle:@"quit" action:@selector(quit) keyEquivalent:@"q"];
+  NSMenuItem *item3 = [[NSMenuItem alloc] initWithTitle:@"Change color" action:@selector(showPickColor) keyEquivalent:@"c"];
 
   [menu addItem:item1];
+  [menu addItem:item3];
   [menu addItem:item2];
+}
+
+- (void)showPickColor {
+  [SingleContainer.shared pickColor];
 }
 
 - (void)capture {

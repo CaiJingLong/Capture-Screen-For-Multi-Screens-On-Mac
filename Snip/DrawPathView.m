@@ -8,6 +8,7 @@
 
 #import "DrawPathView.h"
 #import "SnipUtil.h"
+#import "SingleContainer.h"
 
 @implementation DrawPathView
 
@@ -39,28 +40,29 @@
     // Drawing code here.
 }
 
-- (void)drawCommentInRect:(NSRect)imageRect
-{
+- (void)drawCommentInRect:(NSRect)imageRect {
     NSBezierPath *path = [NSBezierPath bezierPathWithRect:imageRect];
     [path addClip];
-    [[NSColor redColor] set];
+    [[self getPaintColor] set];
     for (DrawPathInfo *info in self.rectArray) {
         [self drawShape:info inBackground:NO];
     }
 }
 
-- (void)drawFinishCommentInRect:(NSRect)imageRect
-{
+- (NSColor *)getPaintColor {
+    return SingleContainer.shared.color;
+}
+
+- (void)drawFinishCommentInRect:(NSRect)imageRect {
     NSBezierPath *path = [NSBezierPath bezierPathWithRect:imageRect];
     [path addClip];
-    [[NSColor redColor] set];
+    [[self getPaintColor] set];
     for (DrawPathInfo *info in self.rectArray) {
         [self drawShape:info inBackground:YES];
     }
 }
 
-- (void)drawShape:(DrawPathInfo *)info inBackground:(BOOL)bIn
-{
+- (void)drawShape:(DrawPathInfo *)info inBackground:(BOOL)bIn {
     NSRect rect = NSMakeRect(info.startPoint.x, info.startPoint.y, info.endPoint.x - info.startPoint.x, info.endPoint.y - info.startPoint.y);
     if (bIn) {
         rect = [self.window convertRectFromScreen:rect];
@@ -152,7 +154,7 @@
                 rect.origin.x += 5;
                 rect.origin.y += 1;
                 rect = [SnipUtil uniformRect:rect];
-                [text drawInRect:rect withAttributes:@{NSFontAttributeName:[NSFont systemFontOfSize:14],NSForegroundColorAttributeName:[NSColor redColor]}];
+                [text drawInRect:rect withAttributes:@{NSFontAttributeName: [NSFont systemFontOfSize:14], NSForegroundColorAttributeName: [self getPaintColor]}];
             }
         }
             break;

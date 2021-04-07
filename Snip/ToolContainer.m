@@ -15,6 +15,7 @@
 @property ImageButton *arrowButton;
 @property ImageButton *textButton;
 @property ImageButton *penButton;
+@property ImageButton *colorButton;
 @property ImageButton *cancelButton;
 @property ImageButton *okButton;
 
@@ -41,13 +42,17 @@
         _penButton = [SnipUtil createButton:[NSImage imageNamed:@"ScreenCapture_toolbar_pen_ineffect"] withAlternate:nil];
         _penButton.tag = ActionEditPen;
 
+        _colorButton = [SnipUtil createButton:[NSImage imageNamed:@"ScreenCapture_toolbar_pick_color.tiff"] withAlternate:nil];
+        _colorButton.tag = ActionEditPickColor;
+
         _cancelButton = [SnipUtil createButton:[NSImage imageNamed:@"ScreenCapture_toolbar_cross_normal"] withAlternate:nil];
         _cancelButton.tag = ActionCancel;
 
         _okButton = [SnipUtil createButton:[NSImage imageNamed:@"ScreenCapture_toolbar_tick_normal"] withAlternate:nil];
         _okButton.tag = ActionOK;
 
-        _tools = @[_rectButton,_ellipseButton,_arrowButton,_penButton,_textButton,_cancelButton,_okButton];
+        _tools = @[_rectButton, _ellipseButton, _arrowButton, _penButton, _textButton, _cancelButton, _okButton];
+        self.toolCount = (int) _tools.count;
         for (ImageButton *btn in _tools) {
             btn.target = self;
             btn.action = @selector(onToolClick:);
